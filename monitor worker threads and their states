@@ -1,0 +1,12 @@
+http://thedbahub.com/understanding-sql-server-worker-threads-and-threadpool-waits/
+---monitor worker threads and their states:
+SELECT
+    scheduler_id,
+    active_worker_count,
+    runnable_tasks_count,
+    current_tasks_count,
+    work_queue_count
+FROM
+    sys.dm_os_schedulers
+WHERE
+    scheduler_id < 255;
